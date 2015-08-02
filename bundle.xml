@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<adapt_framework>
+  <bundle>
+    <label>Password confirmation field</label>
+    <name>form_password_confirm</name>
+    <type>extension</type>
+    <version>1.0.0</version>
+    <namespace>/extension/form_password_confirm</namespace>
+    <description>Password confirmation field for forms, includes a password strength indicator</description>
+    <copyright>2015 Adapt Framework</copyright>
+    <license>MIT</license>
+    <depends_on>
+      <bundle>jquery</bundle>
+      <bundle>bootstrap_views</bundle>
+      <bundle>forms</bundle>
+    </depends_on>
+  </bundle>
+</adapt_framework>
