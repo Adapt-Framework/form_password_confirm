@@ -1,18 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <adapt_framework>
   <bundle>
-    <label>Password confirmation field</label>
+    <label>Adapt Password confirmation field</label>
     <name>form_password_confirm</name>
     <type>extension</type>
     <version>1.0.0</version>
-    <namespace>/extension/form_password_confirm</namespace>
+    <namespace>\adapt\forms\password_confirm</namespace>
     <description>Password confirmation field for forms, includes a password strength indicator</description>
     <copyright>2015 Adapt Framework</copyright>
     <license>MIT</license>
     <depends_on>
-      <bundle>jquery</bundle>
-      <bundle>bootstrap_views</bundle>
-      <bundle>forms</bundle>
+      <bundle>
+        <name>jquery</name>
+      </bundle>
+      <bundle>
+        <name>bootstrap_views</name>
+        <version>1.0</version>
+      </bundle>
+      <bundle>
+        <name>forms</name>
+        <version>1.0</version>
+      </bundle>
+      <bundle>
+        <name>adapt</name>
+        <version>1.0</version>
+      </bundle>
     </depends_on>
+    <schema>
+      <add>
+        <table name="form_field_type">
+          <record>
+            <name>Password confirmation with strength indicator</name>
+            <view>\adapt\forms\password_confirm\view_field_password_confirm_indicator</view>
+          </record>
+        </table>
+      </add>
+    </schema>
   </bundle>
 </adapt_framework>
