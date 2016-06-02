@@ -3,7 +3,7 @@
   <bundle>
     <label>Adapt Password confirmation field</label>
     <name>form_password_confirm</name>
-    <type>extension</type>
+    <type>form_field</type>
     <version>1.0.0</version>
     <namespace>\adapt\forms\password_confirm</namespace>
     <description>Password confirmation field for forms, includes a password strength indicator</description>
@@ -23,7 +23,7 @@
       </bundle>
       <bundle>
         <name>adapt</name>
-        <version>1.0</version>
+        <version>2.0</version>
       </bundle>
     </depends_on>
     <schema>
