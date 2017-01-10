@@ -6,6 +6,8 @@
     <type>form_field</type>
     <version>1.0.0</version>
     <namespace>\adapt\forms\password_confirm</namespace>
+    <version_status>release</version_status>
+    <availability>public</availability>
     <description>Password confirmation field for forms, includes a password strength indicator</description>
     <copyright>2015 Adapt Framework</copyright>
     <license>MIT</license>
