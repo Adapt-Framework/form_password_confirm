@@ -6,6 +6,7 @@
             $('.field-password-confirm-indicator input[type="password"]').first().on(
                 'keyup',
                 function(event){
+
                     var value = $(this).val();
                     var points = 0;
                     
@@ -44,13 +45,7 @@
                         $(this).parents('.field-password-confirm-indicator').find('.progress-bar').removeClass('progress-bar-danger').removeClass('progress-bar-warning').addClass('progress-bar-success');
                         $(this).parents('.field-password-confirm-indicator').find('.progress-bar span').empty().append('Strong password');
                     }
-                    
 
-                    var $confirm = $(this).parents('.field-password-confirm-indicator').find('input[name="confirm_password"]').parent();
-                    
-                    $confirm.removeClass('has-success').removeClass('has-error').removeClass('has-feedback').find('.form-control-feedback').detach();
-                    $confirm.find('input').val('');
-                    
                 }
             );
             
@@ -60,18 +55,31 @@
              * inpect two fields and the standard validator allows
              * for only a single value
              */
-            $('.field-password-confirm-indicator input[name="confirm_password"]').on(
-                'blur',
+            $('.field-password-confirm-indicator input[name="confirm_password"], .field-password-confirm-indicator input[type="password"]').on(
+                'keyup',
                 function(event){
+
                     var $this = $(this);
                     var $group = $this.parent();
                     var $field = $this.parents('.field-password-confirm-indicator');
-                    var $password = $field.find('input[type="password"]').first();
+
+                    // check what the 'other' password field is to validate against
+                    var $password = '';
+                    if($this.attr('name') === 'confirm_password'){
+                        $password = $field.find('input[type="password"]').first();
+                    } else {
+                        $password = $field.find('input[name="confirm_password"]').first();
+                    }
                     
-                    if (/*$password.val() != "" && */$this.val() != "") {
+                    if ($this.val() != "") {
                         if ($this.val() != $password.val()) {
+                            // add the error handler to the group
                             $group.removeClass('has-success').addClass('has-error');
                             $group.find('.form-control-feedback').removeClass('glyphicon-ok').addClass('glyphicon-remove');
+                        } else {
+                            // add the success handler to both groups to allow users to continue
+                            $password.parent().removeClass('has-error').addClass('has-success').removeClass('has-feedback').find('.form-control-feedback').detach();;
+                            $group.removeClass('has-error').addClass('has-success').removeClass('has-feedback').find('.form-control-feedback').detach();
                         }
                     }
                 }
