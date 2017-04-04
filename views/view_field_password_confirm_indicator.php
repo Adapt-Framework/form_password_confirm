@@ -91,7 +91,7 @@ namespace adapt\forms\password_confirm{
             $group = new html_div(array('class' => 'form-group'));
             $control = new html_input(array('type' => 'password', 'name' => 'confirm_password', 'class' => 'form-control'));
             $control->set_id();
-            $group->add(new html_label('Confirm password', array('for' => $control->attr('id'), 'class' => 'control-label')));
+            $group->add(new html_label('Confirm Password', array('for' => $control->attr('id'), 'class' => 'control-label')));
             
             if (isset($form_data['mandatory']) && strtolower($form_data['mandatory']) == "yes"){
                 /* Mark the label */
