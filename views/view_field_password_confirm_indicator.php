@@ -84,7 +84,8 @@ namespace adapt\forms\password_confirm{
                 \bootstrap\views\view_progress_bar::DANGER,
                 true
             );
-            $progress_bar->find('span')->clear()->append('Weak password');
+            //$progress_bar->find('span')->clear()->append('Weak password');
+            $this->add(new html_span([new html_strong('Password strength: '), new html_span('Weak password', ['class' => 'password-strength-string'])]));
             $this->add($progress_bar);
             
             /* Add a confirm password box */
@@ -120,6 +121,7 @@ namespace adapt\forms\password_confirm{
             
             $group->add($control);
             $this->add($group);
+            $this->add(new html_span([new html_strong("Passwords match: "), new html_span('Yes', ['class' => 'passwords-match'])]));
             
         }
         

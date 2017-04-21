@@ -37,13 +37,16 @@
                     
                     if (points >= 0 && points <= 7) {
                         $(this).parents('.field-password-confirm-indicator').find('.progress-bar').removeClass('progress-bar-success').removeClass('progress-bar-warning').addClass('progress-bar-danger');
-                        $(this).parents('.field-password-confirm-indicator').find('.progress-bar span').empty().append('Weak password');
+                        $(this).parents('.field-password-confirm-indicator').find('.progress-bar span').empty().append('');
+                        $(this).parents('.field-password-confirm-indicator').find('span.password-strength-string').empty().append('Weak password');
                     }else if (points >= 8 && points <= 14) {
                         $(this).parents('.field-password-confirm-indicator').find('.progress-bar').removeClass('progress-bar-success').removeClass('progress-bar-danger').addClass('progress-bar-warning');
-                        $(this).parents('.field-password-confirm-indicator').find('.progress-bar span').empty().append('Medium password');
+                        $(this).parents('.field-password-confirm-indicator').find('.progress-bar span').empty().append('');
+                        $(this).parents('.field-password-confirm-indicator').find('span.password-strength-string').empty().append('Medium password');
                     }else if (points >= 15) {
                         $(this).parents('.field-password-confirm-indicator').find('.progress-bar').removeClass('progress-bar-danger').removeClass('progress-bar-warning').addClass('progress-bar-success');
-                        $(this).parents('.field-password-confirm-indicator').find('.progress-bar span').empty().append('Strong password');
+                        $(this).parents('.field-password-confirm-indicator').find('.progress-bar span').empty().append('');
+                        $(this).parents('.field-password-confirm-indicator').find('span.password-strength-string').empty().append('Strong password');
                     }
 
                 }
@@ -81,6 +84,12 @@
                             $password.parent().removeClass('has-error').addClass('has-success').removeClass('has-feedback').find('.form-control-feedback').detach();;
                             $group.removeClass('has-error').addClass('has-success').removeClass('has-feedback').find('.form-control-feedback').detach();
                         }
+                    }
+                    
+                    if ($('.field-password-confirm-indicator input[name="confirm_password"]').val() == $('.field-password-confirm-indicator input[type="password"]').val()){
+                        $('.passwords-match').empty().append('Yes');
+                    }else{
+                        $('.passwords-match').empty().append('No');
                     }
                 }
             )
