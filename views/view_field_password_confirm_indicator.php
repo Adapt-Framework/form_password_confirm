@@ -18,7 +18,7 @@ namespace adapt\forms\password_confirm{
             $this->add($group);
             
             /* Create the control */
-            $control = new html_input(array('type' => 'password', 'name' => $form_data['name'], 'class' => 'form-control'));
+            $control = new html_input(array('type' => 'password', 'name' => $form_data['field_name'], 'class' => 'form-control'));
             $control->set_id();
             
             /* Add the label */
