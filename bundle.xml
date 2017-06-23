@@ -1,42 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <adapt_framework>
-  <bundle>
-    <label>Adapt Password confirmation field</label>
-    <name>form_password_confirm</name>
-    <type>form_field</type>
-    <version>0.8.0</version>
-    <namespace>\adapt\forms\password_confirm</namespace>
-    <version_status>release</version_status>
-    <availability>public</availability>
-    <description>Password confirmation field for forms, includes a password strength indicator</description>
-    <copyright>2015 Adapt Framework</copyright>
-    <license>MIT</license>
-    <depends_on>
-      <bundle>
-        <name>jquery</name>
-      </bundle>
-      <bundle>
-        <name>bootstrap_views</name>
-        <version>1.0</version>
-      </bundle>
-      <bundle>
-        <name>forms</name>
-        <version>0.8</version>
-      </bundle>
-      <bundle>
-        <name>adapt</name>
-        <version>2.0</version>
-      </bundle>
-    </depends_on>
-    <schema>
-      <add>
-        <table name="form_field_type">
-          <record>
-            <name>Password confirmation with strength indicator</name>
-            <view>\adapt\forms\password_confirm\view_field_password_confirm_indicator</view>
-          </record>
-        </table>
-      </add>
-    </schema>
-  </bundle>
+    <bundle>
+        <label>Adapt Password confirmation field</label>
+        <name>form_password_confirm</name>
+        <type>form_field</type>
+        <version>0.8.0</version>
+        <namespace>\adapt\forms\password_confirm</namespace>
+        <version_status>release</version_status>
+        <availability>public</availability>
+        <description>Password confirmation field for forms, includes a password strength indicator</description>
+        <copyright>2017 Matt Bruton</copyright>
+        <license>MIT</license>
+        <vendor>
+            <name>Adapt Framework</name>
+            <website>https://www.adaptframework.com</website>
+        </vendor>
+        <depends_on>
+            <bundle>
+                <name>jquery</name>
+            </bundle>
+            <bundle>
+                <name>bootstrap_views</name>
+                <version>1.0</version>
+            </bundle>
+            <bundle>
+                <name>forms</name>
+                <version>0.8</version>
+            </bundle>
+            <bundle>
+                <name>adapt</name>
+                <version>2.0</version>
+            </bundle>
+        </depends_on>
+        <schema>
+            <add>
+                <table name="form_field_type">
+                    <record>
+                        <name>Password confirmation with strength indicator</name>
+                        <view>\adapt\forms\password_confirm\view_field_password_confirm_indicator</view>
+                    </record>
+                </table>
+            </add>
+        </schema>
+    </bundle>
 </adapt_framework>
